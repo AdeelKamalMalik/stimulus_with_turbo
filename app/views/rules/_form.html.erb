@@ -1,0 +1,25 @@
+<!-- app/views/search/_search_form.html.erb -->
+
+<div data-controller="rules">
+  <%= turbo_frame_tag 'search-form' do %>
+    <%= form_with(model: rule, id: 'search-form') do |form| %>
+      <div class="field">
+        <%= form.label :name, 'Name' %>
+        <%= form.text_field :name %>
+      </div>
+      <div class="field">
+        <%= form.label :keyword, 'Transaction Contains:' %>
+        <%= form.text_field :keyword, data: { 'rules-target': 'keywords', action: 'keyup->rules#setupInputListener' }  %>
+      </div>
+      <div>
+        <%= form.submit %>
+      </div>
+    <% end %>
+  <% end %>
+
+
+  <div data-rules-target="results">
+  </div>
+
+
+</div>
