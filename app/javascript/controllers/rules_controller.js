@@ -26,12 +26,6 @@ export default class extends Controller {
       headers: {
         Accept: "text/vnd.turbo-stream.html",
       }
-    })
-    .then((response) => response.text())
-    .then((html) => {
-      // Append the HTML response to the results container
-      debugger
-      this.resultsTarget.innerHTML = html;
     });
   }
 }

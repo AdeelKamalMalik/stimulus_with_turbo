@@ -17,9 +17,10 @@
     <% end %>
   <% end %>
 
-
-  <div data-rules-target="results">
-  </div>
-
+  <turbo-frame id="search-results-frame">
+    <%= turbo_frame_tag 'search-results' do %>
+      <%= turbo_stream_from 'search-results' %>
+    <% end %>
+  </turbo-frame>
 
 </div>

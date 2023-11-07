@@ -1,2 +1,5 @@
-
-<%= render partial: "rules/transaction", collection: @results %>
+<turbo-stream action="append" target="search-results">
+  <template>
+    <%= render partial: "rules/transaction", collection: @results %>
+  </template>
+</turbo-stream>
